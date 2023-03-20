@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.goosia.memo.mapper.MemoMapper">
+
+    <select id="selectMemoList" resultType="MemoDto">
+        SELECT
+            IDX,
+            CONTENTS
+        FROM
+            DB_MEMO.MEMO
+    </select>
+
+    <select id="selectMemo" parameterType="int" resultType="com.goosia.memo.model.MemoDto">
+        SELECT
+            IDX,
+            CONTENTS
+        FROM
+            db_memo.memo
+        WHERE
+            IDX = #{idx}
+    </select>
+
+    <insert id="insertMemo" parameterType="MemoDto">
+        INSERT INTO db_memo.memo (contents) VALUES (#{contents})
+    </insert>
+
+    <update id="updateMemo" parameterType="MemoDto">
+        UPDATE db_memo.memo SET contents = #{contents} WHERE idx = #{idx}
+    </update>
+
+    <delete id="deleteMemo">
+        DELETE FROM db_memo.memo WHERE idx = #{idx}
+    </delete>
+
+</mapper>
