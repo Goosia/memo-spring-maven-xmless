@@ -60,10 +60,10 @@ public class LogBackConfig {
         createLogger("jdbc.sqlonly", DEBUG, false);
         createLogger("jdbc.sqltiming", DEBUG, false);
         createLogger("com.goosia.memo", INFO, false);
-        createLogger("com.goosia.memo.*.controller", DEBUG, false);
-        createLogger("com.goosia.memo.*.service", WARN, false);
-        createLogger("com.goosia.memo.*.mapper", INFO, false);
-        createLogger("com.goosia.memo.*.model", DEBUG, false);
+        createLogger("com.goosia.memo.controller", DEBUG, false);
+        createLogger("com.goosia.memo.service", WARN, false);
+        createLogger("com.goosia.memo.mapper", INFO, false);
+        createLogger("com.goosia.memo.model", DEBUG, false);
     }
 
     // 어펜더 추가 시 로거 등록 필요
